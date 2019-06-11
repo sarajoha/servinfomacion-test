@@ -8,11 +8,10 @@ class User(models.Model):
     ciudad = models.CharField(max_length=20)
     longitud = models.FloatField(null=True)
     latitud = models.FloatField(null=True)
-    estadogeo = models.CharField(max_length=200) #que tipo de field? boolean
+    estadogeo = models.BooleanField(default=False) #que tipo de field? boolean
 
     class Meta:
         ordering = ('nombre', )
 
-
     def __str__(self):
-        return f'{self.first_name} {self.last_name}'
+        return f'{self.nombre} {self.apellido}'
